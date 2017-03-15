@@ -525,6 +525,7 @@
           this.xmlhttp = new XMLHttpRequest();
           this.xmlhttp.open('GET', url, true);
           this.xmlhttp.setRequestHeader("Content-type", "application/json");
+          this.xmlhttp.setRequestHeader("Authorization", "Bearer " + getAccessToken())
 
           // If there are extra headers, add them to the request
           if (that.extraHeaders) {
