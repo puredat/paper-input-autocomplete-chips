@@ -23,18 +23,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="../paper-input-autocomplete-chips.html">
   </head>
   <style>
-    
+
     body {
       background-color: darkgrey;
     }
-        
+
     body > paper-material {
       width: 400px;
       background-color: white;
       padding: 24px;
       margin: 24px;
     }
-    
+
     paper-material.fixed-paper {
       z-index: 99;
       position: fixed;
@@ -44,11 +44,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-bottom: 24px;
       overflow-y: auto;
     }
-    
+
     paper-chip[data-tag='read-only'] #chip {
       background-color: #FFB74D;
     }
-    
+
   </style>
   <body unresolved>
 
@@ -62,11 +62,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-material class="demo-paper">
         <p>An example of new <code>&lt;paper-input-autocomplete-chips&gt; for ajax support</code>:</p>
-            
-        <paper-input-autocomplete-chips 
-          id="myAutoCompletePOCUnknownItems" 
+
+        <paper-input-autocomplete-chips
+          id="myAutoCompletePOCUnknownItems"
           remote-url="http://www.mocky.io/v2/56b0dda4120000ec18670762"
-          label="Invite people" 
+          label="Invite people"
           on-selected-objects-changed="_allowUnknown_onSelectedObjectsChanged"
           on-response-treatment="XHRResponseTreatment"
           placeholder-after-selected="E-mail..."
@@ -90,14 +90,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-button on-tap="onTestAppendSelectedObjects" raised>Try Append Objects</paper-button>
         <paper-button on-tap="onTestSetReadOnlyObjects" raised>Set Read Only</paper-button>
         <paper-button on-tap="onTestSetRemoveOnlyObjects" raised>Set Remove Only</paper-button>
-            
-        <paper-input-autocomplete-chips 
-          id="myAutoCompletePOCUnknownItems" 
-          local-candidates="{{states}}" 
-          chip-label-prefix="#" 
-          label="State hashtags" 
+
+        <paper-input-autocomplete-chips
+          id="myAutoCompletePOCUnknownItems"
+          local-candidates="{{states}}"
+          chip-label-prefix="#"
+          label="State hashtags"
           on-selected-objects-changed="_allowUnknown_onSelectedObjectsChanged"
-          on-selecting-object="_allowUnknown_onSelectingObject" 
+          on-selecting-object="_allowUnknown_onSelectingObject"
           placeholder-after-selected="#"
           max-selected-items="10"
           auto-validate pattern="^(.*[^, #]* *)*$" error-message="Bad formatted string for a hashtag !"
@@ -109,12 +109,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-material class="demo-paper">
         <p>An example of new <code>&lt;paper-input-autocomplete-chips&gt;</code>:</p>
-    
+
         <paper-button on-tap="onToggleDisabled" raised>Toggle Disabled</paper-button>
         <paper-button on-tap="onSwitchSuggestionPanelPosition" raised>Switch Suggestion Panel (top/bottom)</paper-button>
         <paper-input label="Chip label prefix" value="{{chipLabelPrefix}}"></paper-input>
         <paper-input label="Chip label suffix" value="{{chipLabelSuffix}}"></paper-input>
-            
+
         <paper-input-autocomplete-chips id="myAutoCompletePOC" local-candidates="{{states}}" chip-label-prefix="[[chipLabelPrefix]]" chip-label-suffix="[[chipLabelSuffix]]" label="Chips" placeholder-after-selected="..." search-on-got-focus search-if-empty>
           <iron-icon icon="social:share" prefix></iron-icon>
           <paper-icon-button icon="lock-open" suffix></paper-icon-button>
@@ -128,9 +128,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-material class="demo-paper">
         <p>An example of <code>&lt;paper-input-autocomplete-chips&gt;</code>:</p>
-        
+
         <paper-button on-tap="onSetDefaultValue" raised>Set default value</paper-button>
-    
+
         <paper-input-autocomplete-chips id="myAutoComplete" local-candidates="{{states}}" label="Chips">
           <!--<iron-icon icon="visibility" prefix></iron-icon>
           <iron-icon icon="visibility" suffix></iron-icon>-->
@@ -139,12 +139,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-material class="demo-paper">
         <p>An example of <code>&lt;paper-chip&gt;</code>:</p>
-    
+
         <paper-chip label="Jane Doe" style="display: block;" removable openable>
           <div class="icon">J</div>
           <h1>jdoe@example.com</h1>
         </paper-chip>
-  
+
         <paper-chip label="Jane Doe" style="display: block;" removable openable animated>
           <div class="icon">J</div>
           <h1>jdoe@example.com</h1>
@@ -153,7 +153,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <paper-material class="demo-paper" style="height: 300px; overflow: auto;">
         <p>An example of <code>&lt;paper-input-autocomplete-chips&gt;</code>:</p>
-    
+
         <paper-input-autocomplete-chips local-candidates="{{states}}" label="Chips">
           <!--<iron-icon icon="visibility" prefix></iron-icon>
           <iron-icon icon="visibility" suffix></iron-icon>-->
@@ -161,17 +161,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </paper-material>
 
 
+      <paper-material class="demo-paper">
+        <p>An example of new <code>&lt;paper-input-autocomplete-chips&gt; for tags accepting non unknown Items</code>:</p>
+
+        <paper-button on-tap="onTestAppendSelectedObjects" raised>Try Append Objects</paper-button>
+        <paper-button on-tap="onTestSetReadOnlyObjects" raised>Set Read Only</paper-button>
+        <paper-button on-tap="onTestSetRemoveOnlyObjects" raised>Set Remove Only</paper-button>
+
+        <paper-input-autocomplete-chips
+          id="myAutoCompletePOCUnknownItems"
+          local-candidates="{{states}}"
+          chip-label-prefix="#"
+          label="State hashtags"
+          on-selected-objects-changed="_allowUnknown_onSelectedObjectsChanged"
+          on-selecting-object="_allowUnknown_onSelectingObject"
+          placeholder-after-selected="#"
+          max-selected-items="10"
+          auto-validate pattern="^(.*[^, #]* *)*$" error-message="Bad formatted string for a hashtag !"
+          token-accept-key-codes="32,188"
+          allow-select-unknown-token>
+        </paper-input-autocomplete-chips>
+
+      </paper-material>
+
       <paper-material class="demo-paper" style="height: 300px; overflow: auto;">
-        <p>An example of <code>&lt;paper-input-autocomplete-chips&gt;</code> with the <code>noSuggestInactive</code> attribute:</p>
-        <p>It won't suggest neither Alabama nor Alaska</p>
-        <paper-input-autocomplete-chips local-candidates="{{states}}" label="Chips" no-suggest-inactive>
+        <p>An example of <code>&lt;paper-input-autocomplete-chips&gt;</code> with the <code>allowChipsDragDrop</code> attribute. This will allow dran and drop of the chips</p>
+        <paper-input-autocomplete-chips
+          allow-chips-drag-drop
+          token-accept-key-codes="32,188"
+          allow-select-unknown-token>
         </paper-input-autocomplete-chips>
       </paper-material>
 
-    
+
       <script>
         window.addEventListener('WebComponentsReady', function() {
-          
+
           var app = document.querySelector('#app');
 
           app.onTestAppendSelectedObjects = function () {
@@ -192,49 +217,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           app.onTestSetReadOnlyObjects = function () {
               var autoComplete = document.getElementById('myAutoCompletePOCUnknownItems');
-              
-              autoComplete.readOnly = !autoComplete.readOnly; 
+
+              autoComplete.readOnly = !autoComplete.readOnly;
           };
-          
+
           app.onTestSetRemoveOnlyObjects = function () {
               var autoComplete = document.getElementById('myAutoCompletePOCUnknownItems');
-              
-              autoComplete.removeOnly = !autoComplete.removeOnly; 
+
+              autoComplete.removeOnly = !autoComplete.removeOnly;
           };
-          
+
           app.onSetDefaultValue = function () {
             document.getElementById('myAutoComplete').selectedObject = app.states[0];
           };
-          
+
           app.onToggleDisabled = function () {
             var $el = document.getElementById('myAutoCompletePOC');
             $el.disabled = !$el.disabled;
           };
-          
+
           app.onSwitchSuggestionPanelPosition = function () {
             var $el = document.getElementById('myAutoCompletePOC');
             //console.debug($el.suggestionsPosition);
             $el.suggestionsPosition = ($el.suggestionsPosition === 'top') ? 'bottom' : 'top';
           };
-          
+
           app._allowUnknown_onSelectedObjectsChanged = function (e) {
             //console.debug('[_allowUnknown_onSelectedObjectsChanged]', e.target.selectedObjects);
           };
-          
+
           app._allowUnknown_onSelectingObject = function (e) {
 
             if (e.detail.selectedObject.text.indexOf('@') === 0) {
                 e.preventDefault();
             }
-            
+
             if (e.detail.selectedObject.text.indexOf('#') === 0) {
-                e.detail.selectedObject.text = e.detail.selectedObject.text.substring(1);  
+                e.detail.selectedObject.text = e.detail.selectedObject.text.substring(1);
             }
           };
 
           app.XHRResponseTreatment = function(e){
             var length = e.detail.response.length;
-            
+
             for(var i = 0; i < length; i++){
               e.detail.response[i].text = e.detail.response[i].t;
               e.detail.response[i].imgUrl = e.detail.response[i].i;
@@ -244,7 +269,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           app._pasteHandler = function( text ){
             return text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
           };
-                  
+
           app.defaultSuggestions = [
             {
               key: 1,
@@ -259,7 +284,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               imgUrl: 'http://lorempixel.com/256/256/'
             },
           ];
-                    
+
           app.states = [
             {
               key: 1,
@@ -313,7 +338,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           ];
           */
 
-          // 
+          //
           // app.states = [
           //   "Alabama",
           //   "Alaska",
@@ -375,7 +400,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           //   "Wisconsin",
           //   "Wyoming"
           // ];
-        });        
+        });
       </script>
     </template>
   </body>
